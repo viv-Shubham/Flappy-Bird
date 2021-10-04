@@ -1,6 +1,6 @@
 let background_speed = 1.1;
 let ground_speed = 3;
-let gravity = 0.5;
+let gravity = 0.2;
 let background = document.querySelector('.background-img');
 let background_props = background.getBoundingClientRect();
 let ground = document.querySelector('.ground');
@@ -102,7 +102,7 @@ function play() {
     bird_dy = bird_dy + gravity;
     document.addEventListener('keydown', (e) => {
       if (e.key == 'ArrowUp' || e.key == ' ') {
-        bird_dy = -7.6;
+        bird_dy = -6.5;
       }
     });
 
@@ -123,7 +123,7 @@ function play() {
   requestAnimationFrame(apply_gravity);
 
   let pipe_seperation = 0;
-  let pipe_gap = 22;
+  let pipe_gap = 42;
   function create_pipe() {
     if (game_state != 'Play') return;
     if (pipe_seperation > 115) {
